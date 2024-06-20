@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AssemblyName>doofus</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenAI" Version="2.0.0-beta.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="DoofusPluginBase\DoofusPluginBase.csproj" />
+    <Content Remove="DoofusPluginBase\**" />
+    <Compile Remove="DoofusPluginBase\**" />
+    <EmbeddedResource Remove="DoofusPluginBase\**" />
+    <None Remove="DoofusPluginBase\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
